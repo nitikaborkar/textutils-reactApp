@@ -4,15 +4,15 @@ export default function TextForm(props) {
   const [text, setText] = useState("");
   //so now whereever i update count it will update without reloading page
   const handleUpperClick = () => {
-    console.log("Upper case was clicked");
+    props.showAlert("Converted to Upper case ","success");
     setText(text.toUpperCase());
   };
   const handleLowerClick = () => {
-    console.log("Upper case was clicked");
+    props.showAlert("Converted to Lower case","success");
     setText(text.toLowerCase());
   };
   const handleSentenceClick = () => {
-    console.log("Sentence case was clicked");
+    props.showAlert(" Converted to Sentence case","success");
     let words = text.split(" ");
     for (let i = 0; i < words.length; i++) {
       words[i] =
@@ -23,7 +23,7 @@ export default function TextForm(props) {
     setText(newText);
   };
   const handleNumberClick = () => {
-    console.log("Extract Number was clicked");
+    props.showAlert(" Numbers Extracted","success");
     let newText = "";
     for (let i = 0; i < text.length; i++) {
       if (!isNaN(text.charAt(i))) newText += text.charAt(i);
@@ -31,7 +31,7 @@ export default function TextForm(props) {
     setText(newText);
   };
   const handleTextClick = () => {
-    console.log("Extract Text was clicked");
+    props.showAlert("Text Extracted","success");
     let newText = "";
     for (let i = 0; i < text.length; i++) {
       if (isNaN(text.charAt(i))) newText += text.charAt(i);
@@ -39,13 +39,13 @@ export default function TextForm(props) {
     setText(newText);
   };
   const removeWhiteSpace = () => {
-    console.log("removeWhiteSpace was clicked");
+    props.showAlert("WhiteSpaces removed","success");
     let words = text.split(" ");
     let newText = words.join("");
     setText(newText);
   };
   const removeSpecial = () => {
-    console.log("removeSpecial was clicked");
+    props.showAlert("Removed Special characters","success");
     let newText = "";
     for (let i = 0; i < text.length; i++) {
       if (!isNaN(text.charAt(i)) || /[a-zA-Z]/.test(text.charAt(i))) {
@@ -55,9 +55,8 @@ export default function TextForm(props) {
     setText(newText);
   };
   const copyToClipboard = () => {
-    console.log("copyToClipboard was clicked");
+    props.showAlert("Copied to Clipboard","success");
     navigator.clipboard.writeText(text);
-    alert("Copied the text: " + text);
   };
 
   const handleOnchange = (event) => {
@@ -128,7 +127,7 @@ export default function TextForm(props) {
         </p>
         <p>{text.trim().length > 0 ? `${text.split(" ").length * 0.08} Minutes needed to read` : "0 Minutes to read"}</p>
         <h2>Preview</h2>
-        <p>{text}</p>
+        <p>{text.length>0?text: "Enter something in the textbox above to preview it here"}</p>
       </div>
     </>
   );

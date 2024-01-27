@@ -15,7 +15,7 @@ export default function About() {
               aria-expanded="true"
               aria-controls="collapseOne"
             >
-              Accordion Item #1
+             <strong>What is TextUtils?</strong> 
             </button>
           </h2>
           <div
@@ -24,18 +24,13 @@ export default function About() {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body">
-              <strong>This is the first item's accordion body.</strong> It is
-              shown by default, until the collapse plugin adds the appropriate
-              classNamees that we use to style each element. These classNamees
-              control the overall appearance, as well as the showing and hiding
-              via CSS transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+            Welcome to TextUtils - Your Text Analysis Companion!
+
+            TextUtils is a versatile text analysis tool designed to assist you in understanding and manipulating text content. Whether you're counting words and characters, converting text case, or calculating time taken to read, TextUtils has got you covered.
             </div>
           </div>
         </div>
-        <div className="accordion-item">
+        {/* <div className="accordion-item">
           <h2 className="accordion-header">
             <button
               className="accordion-button collapsed"
@@ -93,9 +88,9 @@ export default function About() {
               overriding our default variables. It's also worth noting that just
               about any HTML can go within the <code>.accordion-body</code>,
               though the transition does limit overflow.
-            </div>
+            </div> 
           </div>
-        </div>
+        </div>*/}
       </div>
     </div>
   );
